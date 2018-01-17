@@ -1,3 +1,4 @@
 <p>Welcome <%= @user.full_name %></p>
+<p><%= link_to 'Add new portfolio', new_portfolio_path %>
 <p><%= link_to 'logout', destroy_user_session_path, method: :delete %></p>
 <p><%= link_to 'update', edit_user_registration_path %></p>
