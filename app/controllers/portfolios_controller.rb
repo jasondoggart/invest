@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-
+    before_action :authenticate_user!
     def new
         @portfolio = Portfolio.new
     end
@@ -24,6 +24,9 @@ class PortfoliosController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def index
     end
 
     private
