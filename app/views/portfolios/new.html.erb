@@ -1,13 +1,2 @@
 <h1>Create new portfolio</h1>
-<%= form_for @portfolio do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, autocomplete: 'Portfolio name...' %>
-
-    <%= f.label :description %>
-    <%= f.text_field :description, autocomplete: 'Portfolio description...' %>
-
-    <%= f.label :account_type %>
-    <%= f.text_field :account_type, autocomplete: 'Account type' %>
-
-    <%= f.submit 'Create portfolio'%>
-<% end %>
+<%= render 'form' %>

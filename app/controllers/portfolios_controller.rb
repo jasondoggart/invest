@@ -7,9 +7,22 @@ class PortfoliosController < ApplicationController
     def create
         @portfolio = current_user.portfolios.build(portfolio_params)
         if @portfolio.save
-            redirect_to current_user, notice: 'Your account was successfully created'
+            redirect_to current_user, notice: 'Your portfolio was successfully created'
         else
             render :new
+        end
+    end
+
+    def edit
+        @portfolio = Portfolio.find(params[:id])
+    end
+
+    def update
+        @portfolio = Portfolio.find(params[:id])
+        if @portfolio.update(portfolio_params)
+            redirect_to current_user, notice: 'Your portfolio was successfully created'
+        else
+            render :edit
         end
     end
 
